@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="vista" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <TabPane fx:id="tabPanel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" side="BOTTOM" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab fx:id="tabUbicacion" text="Ubicación">
+               <content>
+                  <BorderPane fx:id="borderUbicacion">
+                     <center>
+                        <GridPane fx:id="gridUbicacion" BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" />
+                            <ColumnConstraints hgrow="SOMETIMES" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <VBox fx:id="vBoxLatitud" spacing="5.0">
+                                 <children>
+                                    <Label fx:id="labelLatitud" text="LATITUD">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelLatitudCont" />
+                                 </children>
+                              </VBox>
+                              <VBox fx:id="vBoxLongitud" spacing="5.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Label fx:id="labelLongitud" text="LONGITUD">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelLongitudCont" />
+                                 </children>
+                              </VBox>
+                              <VBox fx:id="vBoxCiudad" spacing="5.0" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label fx:id="labelCiudad" text="CIUDAD, MUNICIPIO">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelCiudadCont" />
+                                 </children>
+                              </VBox>
+                              <VBox fx:id="vBoxZip" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label fx:id="labelZip" text="CÓDIGO ZIP">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelZipCont" />
+                                 </children>
+                              </VBox>
+                              <VBox fx:id="vBoxIdioma" spacing="5.0" GridPane.rowIndex="3">
+                                 <children>
+                                    <Label fx:id="labelIdioma" text="IDIOMA">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelIdiomaCont" />
+                                 </children>
+                              </VBox>
+                              <VBox fx:id="vBoxHoraria" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <children>
+                                    <Label fx:id="labelHoraria" text="ZONA HORARIA">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelHorariaCont" />
+                                 </children>
+                              </VBox>
+                              <VBox fx:id="vBoxTelefono" spacing="5.0" GridPane.rowIndex="4">
+                                 <children>
+                                    <Label fx:id="labelTelefono" text="CÓDIGO TELEFÓNICO">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelTelefonoCont" />
+                                 </children>
+                              </VBox>
+                              <VBox fx:id="vBoxMoneda" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <children>
+                                    <Label fx:id="labelMoneda" text="MONEDA">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelMonedaCont" />
+                                 </children>
+                              </VBox>
+                              <HBox fx:id="hBoxLocalizacion" spacing="5.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label fx:id="labelLocalizacion" alignment="TOP_LEFT" text="LOCALIZACIÓN IP:">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelLocalizacionCont" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </GridPane>
+                     </center>
+                  </BorderPane>
+               </content>
+            </Tab>
+          <Tab fx:id="tabConeccion" text="Conección">
+               <content>
+                  <BorderPane fx:id="borderConeccion">
+                     <center>
+                        <VBox fx:id="vBoxConeccion" spacing="10.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox fx:id="vBoxDireccionip" spacing="5.0">
+                                 <children>
+                                    <Label fx:id="labelDireccionip" text="DIRECCIÓN IP">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelDireccionIpCont" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </VBox>
+                              <HBox fx:id="hBoxIsp" spacing="5.0">
+                                 <children>
+                                    <ImageView fx:id="internet" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Logo/icons8-internet-32.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="labelIsp" text="ISP REGISTRADA:">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelIspCont" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox fx:id="hBoxConeccion" spacing="290.0">
+                                 <children>
+                                    <VBox fx:id="vBoxTipo" spacing="5.0">
+                                       <children>
+                                          <Label fx:id="labelTipo" text="TIPO">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="labelTipoCont" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                    <VBox fx:id="vBoxAsn" spacing="5.0">
+                                       <children>
+                                          <Label fx:id="labelAsn" text="ASN">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="labelAsnCont" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </HBox>
+                              <VBox fx:id="vBoxHost" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0">
+                                 <children>
+                                    <Label fx:id="labelHost" text="NOMBRE DEL HOST">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelHostCont" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+               </content>
+          </Tab>
+            <Tab fx:id="tabSeguridad" text="Seguridad">
+               <content>
+                  <BorderPane fx:id="borderSeguridad">
+                     <center>
+                        <VBox fx:id="vBoxSeguridad" spacing="10.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox fx:id="hBoxEscudo" spacing="5.0">
+                                 <children>
+                                    <ImageView fx:id="escudo" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Logo/icons8-escudo-32.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="labelEscudoCont" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </HBox>
+                              <GridPane fx:id="gridSeguridad">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" />
+                                  <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <VBox fx:id="vBoxProxy" spacing="10.0">
+                                       <children>
+                                          <Label fx:id="labelProxy" text="¿PROXY DETECTADO?">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <CheckBox fx:id="checkProxy" mnemonicParsing="false" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </VBox>
+                                    <VBox fx:id="vBoxTor" spacing="10.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Label fx:id="labelTor" text="¿TOR DETECTADO?">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <CheckBox fx:id="checkTor" mnemonicParsing="false" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                    <VBox fx:id="vBoxCrawler" spacing="10.0" GridPane.rowIndex="1">
+                                       <children>
+                                          <Label fx:id="labelCrawler" text="¿CRAWLER DETECTADO?">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <CheckBox fx:id="checkCrawler" mnemonicParsing="false" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                    <VBox fx:id="vBoxNivelAmenaza" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <children>
+                                          <Label fx:id="labelNivelAmenaza" text="NIVEL DE AMENAZA">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="labelNivelAmenazaCont" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </GridPane>
+                              <VBox fx:id="vBoxTipoAmenaza" spacing="5.0">
+                                 <children>
+                                    <Label fx:id="labelTipoAmenaza" text="TIPOS DE AMENAZAS POTENCIALES">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelTipoAmenazaCont" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+               </content>
+            </Tab>
+        </tabs>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </TabPane>
+   </center>
+   <top>
+      <HBox fx:id="hBoxArriba" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="wifi" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Logo/icons8-wifi-30.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="textFieldIp" />
+            <Button fx:id="buttonComprobar" mnemonicParsing="false" text="Comprobar IP" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </top>
+</BorderPane>
